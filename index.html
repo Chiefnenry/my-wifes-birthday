@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opening Envelope with HTML & css</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    .myLetter {
+        width: 100%;
+        background-color: white;
+    }
+
+    .myLetter-img {
+        width: 100%;
+        aspect-ratio: 12/9;
+        object-fit: cover;
+        position: sticky;
+        top: -10px;
+        left: 0;
+        box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .myLetter-text {
+        padding: 16px;
+        height: 100%;
+    }
+
+    .open-letter {
+        border: 1px solid #cb5a5e;
+        background-color: #cb5a5e;
+        color: white;
+        padding: 8px 16px;
+        position: absolute;
+        bottom: 100px;
+        left: 50%;
+        transform: translateX(-50%);
+        cursor: pointer;
+        transition: background-color 0.4s ease-in-out;
+    }
+
+    .open-letter:hover {
+        background-color: #cb5a5eb1;
+    }
+</style>
+
+<body>
+    <div class="open-letter">
+        Open Letter
+    </div>
+    <div class="letter-image">
+        <div class="animated-mail">
+            <div class="back-fold"></div>
+            <div class="letter">
+                <img src="my love.jpg" alt="image" class="myLetter-img">
+                <p class="myLetter-text">
+                    My dearest TEMILADE, <br> <br> As the sun rises on your special day,
+                    I want you to know just how deeply you are cherished, admired, and
+                    loved. Your presence in my life has brought boundless joy, endless
+                    laughter, and an abundance of love. On this day, I celebrate not just
+                    the passing of another year, but the incredible person you are—the
+                    kindness in your heart, the strength in your spirit, and the beauty in
+                    your soul. You illuminate my world with your smile, and every moment
+                    spent with you feels like a gift. As you blow out the candles and make a
+                    wish, know that my greatest desire is to see you happy, fulfilled, and
+                    surrounded by love today and always. May this birthday be as
+                    extraordinary as you are, filled with unforgettable moments, cherished
+                    memories, and all the love your heart can hold. Happy birthday, my
+                    darling. Here's to another year of adventures, laughter, and endless
+                    love. You mean everything to me, today and forever. <br><br> With all my love, <br><br>
+                    CHARLES.
+                </p>
+                <!-- <div class="letter-border"></div>
+                <div class="letter-title">Test</div>
+                <div class="letter-context"></div>
+                <div class="letter-context-body">
+                    <p><strong>Dear,<br>Ram Avtar</strong><br> you are invited BPCON 2023</p>
+                </div>
+                <div class="letter-stamp">
+                    <div class="letter-stamp-inner"></div>
+                </div> -->
+            </div>
+            <div class="top-fold"></div>
+            <div class="body"></div>
+            <div class="left-fold"></div>
+        </div>
+
+        <div class="shadow"></div>
+    </div>
+    <script>
+        const openLetter = document.querySelector('.open-letter')
+        const letter = document.querySelector('.letter-image')
+        const animatedMail = document.querySelector('.animated-mail')
+        console.log(openLetter, letter)
+        openLetter.addEventListener('click', () => {
+            letter.classList.add('open')
+        })
+        animatedMail.addEventListener('click', () => {
+            letter.classList.remove('open')
+        })
+    </script>
+</body>
+
+</html>
